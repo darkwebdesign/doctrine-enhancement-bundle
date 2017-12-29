@@ -18,7 +18,7 @@
  * SOFTWARE.
  */
 
-namespace DarkWebDesign\SymfonyAddonBundle\DependencyInjection;
+namespace DarkWebDesign\DoctrineEnhancementBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
