@@ -1,0 +1,19 @@
+{
+    "name": "darkwebdesign/doctrine-enhancement-bundle",
+    "type": "library",
+    "description": "Doctrine Enhancement Bundle",
+    "keywords": ["bundle", "doctrine", "events"],
+    "homepage": "http://www.darkwebdesign.nl/",
+    "license": "MIT",
+    "authors": [
+        {"name": "Raymond Schouten"}
+    ],
+    "require": {
+        "darkwebdesign/doctrine-enhancement-pack": "2.4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "DarkWebDesign\\DoctrineEnhancementBundle\\": ""
+        }
+    }
+}
