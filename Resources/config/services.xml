@@ -5,7 +5,7 @@
     <services>
         <service id="darkwebdesign.doctrine_enhanced_events.event_subscriber"
                  class="DarkWebDesign\DoctrineEnhancedEvents\EventSubscriber">
-            <tag name="kernel.event_subscriber" />
+            <tag name="doctrine.event_subscriber" />
         </service>
     </services>
 </container>
