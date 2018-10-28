@@ -9,7 +9,7 @@
         {"name": "Raymond Schouten"}
     ],
     "require": {
-        "darkwebdesign/doctrine-enhancement-pack": "2.4.*",
+        "darkwebdesign/doctrine-enhancement-pack": "2.5.*",
         "symfony/config": "^2.8|^3.0",
         "symfony/dependency-injection": "^2.8|^3.0",
         "symfony/http-kernel": "^2.8|^3.0"
