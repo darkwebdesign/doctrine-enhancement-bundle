@@ -1,4 +1,4 @@
 services:
     darkwebdesign.doctrine_enhanced_events.event_subscriber:
         class: 'DarkWebDesign\DoctrineEnhancedEvents\EventSubscriber'
-        tags: ['doctrine.event_subscriber']
+        tags: [{ name: 'doctrine.event_subscriber' }]
