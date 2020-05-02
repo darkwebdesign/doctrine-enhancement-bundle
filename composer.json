@@ -9,10 +9,11 @@
         {"name": "Raymond Schouten"}
     ],
     "require": {
-        "darkwebdesign/doctrine-enhancement-pack": "2.5.*",
-        "symfony/config": "^2.8|^3.0",
-        "symfony/dependency-injection": "^2.8|^3.0",
-        "symfony/http-kernel": "^2.8|^3.0"
+        "darkwebdesign/doctrine-enhancement-pack": "2.6.*",
+        "php": "^7.1",
+        "symfony/config": "^4.0",
+        "symfony/dependency-injection": "^4.0",
+        "symfony/http-kernel": "^4.0"
     },
     "autoload": {
         "psr-4": {
