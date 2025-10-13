@@ -47,7 +47,17 @@ jobs:
         run: 'vendor/bin/phpstan analyze --no-progress --ansi'
 
   composer:
-    name: 'Composer'
+    name: 'Validate composer.json'
+    runs-on: 'ubuntu-24.04'
+    steps:
+      - uses: 'actions/checkout@v4'
+      - uses: 'shivammathur/setup-php@v2'
+        with:
+          php-version: '7.2'
+      - run: 'composer validate'
+
+  dependencies:
+    name: 'Install dependencies'
     runs-on: 'ubuntu-24.04'
     strategy:
       matrix:
