@@ -22,6 +22,8 @@ jobs:
         uses: 'shivammathur/setup-php@v2'
         with:
           php-version: '7.2'
+      - name: 'Override dependency'
+        run: 'composer require --no-install darkwebdesign/doctrine-enhancement-pack:2.8.x-dev'
       - name: 'Composer Install'
         uses: 'ramsey/composer-install@v3'
       - name: 'PHP CS Fixer'
