@@ -44,6 +44,7 @@ jobs:
       - uses: 'shivammathur/setup-php@v2'
         with:
           php-version: '7.2'
+      - run: 'composer require --no-install darkwebdesign/doctrine-enhancement-pack:2.8.x-dev'
       - uses: 'ramsey/composer-install@v3'
       - run: 'vendor/bin/rector process --dry-run --no-progress-bar --ansi'
 
