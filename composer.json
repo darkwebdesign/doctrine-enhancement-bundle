@@ -1,16 +1,18 @@
 {
     "name": "darkwebdesign/doctrine-enhancement-bundle",
-    "type": "library",
     "description": "Doctrine Enhancement Bundle",
+    "type": "library",
     "keywords": ["bundle", "doctrine", "events"],
     "homepage": "http://www.darkwebdesign.nl/",
     "license": "MIT",
     "authors": [
-        {"name": "Raymond Schouten"}
+        {
+            "name": "Raymond Schouten"
+        }
     ],
     "require": {
-        "darkwebdesign/doctrine-enhancement-pack": "2.7.*",
-        "php": ">=7.1",
+        "php": ">=7.2",
+        "darkwebdesign/doctrine-enhancement-pack": "2.8.*",
         "symfony/config": "^4.0 || ^5.0",
         "symfony/dependency-injection": "^4.0 || ^5.0",
         "symfony/http-kernel": "^4.0 || ^5.0"
@@ -19,5 +21,8 @@
         "psr-4": {
             "DarkWebDesign\\DoctrineEnhancementBundle\\": "src/"
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
