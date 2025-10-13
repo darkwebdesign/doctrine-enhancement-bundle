@@ -27,6 +27,6 @@ jobs:
         with:
           php-version: "${{ matrix.php }}"
       - name: 'Override dependency'
-        run: 'composer require --no-install darkwebdesign/symfony-addon-pack:7.1.x-dev'
+        run: 'composer require --no-install darkwebdesign/doctrine-enhancement-pack:2.8.x-dev'
       - name: 'Composer Install'
         uses: 'ramsey/composer-install@v3'
