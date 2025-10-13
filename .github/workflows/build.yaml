@@ -13,38 +13,28 @@ concurrency:
 
 jobs:
   php-cs-fixer:
-    name: 'PHP CS Fixer'
+    name: 'Run PHP CS Fixer'
     runs-on: 'ubuntu-24.04'
     steps:
-      - name: 'Checkout'
-        uses: 'actions/checkout@v4'
-      - name: 'Setup PHP'
-        uses: 'shivammathur/setup-php@v2'
+      - uses: 'actions/checkout@v4'
+      - uses: 'shivammathur/setup-php@v2'
         with:
           php-version: '7.2'
-      - name: 'Override dependency'
-        run: 'composer require --no-install darkwebdesign/doctrine-enhancement-pack:2.8.x-dev'
-      - name: 'Composer Install'
-        uses: 'ramsey/composer-install@v3'
-      - name: 'PHP CS Fixer'
-        run: 'vendor/bin/php-cs-fixer fix --diff --dry-run --show-progress=none --ansi'
+      - run: 'composer require --no-install darkwebdesign/doctrine-enhancement-pack:2.8.x-dev'
+      - uses: 'ramsey/composer-install@v3'
+      - run: 'vendor/bin/php-cs-fixer fix --diff --dry-run --show-progress=none --ansi'
 
   phpstan:
-    name: 'PHPStan'
+    name: 'Run PHPStan'
     runs-on: 'ubuntu-24.04'
     steps:
-      - name: 'Checkout'
-        uses: 'actions/checkout@v4'
-      - name: 'Setup PHP'
-        uses: 'shivammathur/setup-php@v2'
+      - uses: 'actions/checkout@v4'
+      - uses: 'shivammathur/setup-php@v2'
         with:
           php-version: '7.2'
-      - name: 'Override dependency'
-        run: 'composer require --no-install darkwebdesign/doctrine-enhancement-pack:2.8.x-dev'
-      - name: 'Composer Install'
-        uses: 'ramsey/composer-install@v3'
-      - name: 'PHPStan'
-        run: 'vendor/bin/phpstan analyze --no-progress --ansi'
+      - run: 'composer require --no-install darkwebdesign/doctrine-enhancement-pack:2.8.x-dev'
+      - uses: 'ramsey/composer-install@v3'
+      - run: 'vendor/bin/phpstan analyze --no-progress --ansi'
 
   composer:
     name: 'Validate composer.json'
@@ -64,13 +54,9 @@ jobs:
         php: ['7.2', '7.3', '7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
       fail-fast: false
     steps:
-      - name: 'Checkout'
-        uses: 'actions/checkout@v4'
-      - name: 'Setup PHP'
-        uses: 'shivammathur/setup-php@v2'
+      - uses: 'actions/checkout@v4'
+      - uses: 'shivammathur/setup-php@v2'
         with:
           php-version: "${{ matrix.php }}"
-      - name: 'Override dependency'
-        run: 'composer require --no-install darkwebdesign/doctrine-enhancement-pack:2.8.x-dev'
-      - name: 'Composer Install'
-        uses: 'ramsey/composer-install@v3'
+      - run: 'composer require --no-install darkwebdesign/doctrine-enhancement-pack:2.8.x-dev'
+      - uses: 'ramsey/composer-install@v3'
