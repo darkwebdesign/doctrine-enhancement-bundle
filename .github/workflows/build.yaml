@@ -1,0 +1,32 @@
+name: 'Build'
+
+on:
+  push:
+    branches:
+      - 'main'
+      - '[0-9].[0-9]'
+  pull_request:
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.head_ref || github.run_id }}"
+  cancel-in-progress: true
+
+jobs:
+  composer:
+    name: 'Composer'
+    runs-on: 'ubuntu-24.04'
+    strategy:
+      matrix:
+        php: ['7.1', '7.2', '7.3', '7.4']
+      fail-fast: false
+    steps:
+      - name: 'Checkout'
+        uses: 'actions/checkout@v4'
+      - name: 'Setup PHP'
+        uses: 'shivammathur/setup-php@v2'
+        with:
+          php-version: "${{ matrix.php }}"
+      - name: 'Override dependency'
+        run: 'composer require --no-install darkwebdesign/symfony-addon-pack:7.1.x-dev'
+      - name: 'Composer Install'
+        uses: 'ramsey/composer-install@v3'
